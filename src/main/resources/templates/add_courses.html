@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course - Student Management System</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Set minimum height to ensure footer stays at bottom */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px; /* Add margin to separate buttons */
+        }
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background-color: #555;
+        }
+    </style>
+    <!-- Include any necessary JavaScript -->
+    <script src="addcourses.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Add Course - Student Management System</h1>
+    </header>
+    <div class="content">
+        <form action="/courses/add" method="post">
+            <label for="deptCode">Department Code:</label>
+            <input type="text" id="deptCode" name="deptCode" required><br>
+            <label for="courseNumber">Course Number:</label>
+            <input type="number" id="courseNumber" name="courseNumber" required><br>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br>
+            <input type="submit" value="Add Course">
+            <a href="/" class="back-btn">Back to Home</a>
+        </form>
+    </div>
+    <footer>
+        <div>
+            &copy; 2024 Student Management System. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

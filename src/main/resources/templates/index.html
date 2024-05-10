@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Student Management System</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Set minimum height to ensure footer stays at bottom */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px; /* Add margin at the bottom */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flexbox to align items horizontally */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            justify-content: center; /* Center the items horizontally */
+        }
+        nav ul li {
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Student Management System</h1>
+    </header>
+    <div class="content">
+        <p>Please select an option from the navigation menu.</p>
+        <nav>
+            <ul>
+                <li><a href="/students/add">Add Student</a></li>
+                <li><a href="/students/view">View Student</a></li>
+                <li><a href="/students/delete">Delete Student</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="/courses/add">Add Courses</a></li>
+                <li><a href="/courses/view">View Courses</a></li>
+                <li><a href="/courses/delete">Delete Courses</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="/classes/add">Add Classes</a></li>
+                <li><a href="/classes/view">View Classes</a></li>
+                <li><a href="/classes/delete">Delete Classes</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+				<li><a href="/enrollments/enroll">enroll student into a class</a></li>
+				<li><a href="/enrollments/drop">drop student from a class</a></li>
+                <li><a href="/logs/logs">View Logs</a></li>
+                <li><a href="/enrollments/view">View Enrollments</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer>
+        <div>
+            &copy; 2024 Student Management System. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

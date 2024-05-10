@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Logs - Student Management System</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Set minimum height to ensure footer stays at bottom */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative; /* Make header position relative */
+        }
+        .back-to-home {
+            position: absolute; /* Position the back button */
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            text-decoration: none;
+            color: #fff;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; /* Add margin to separate table from other content */
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+	<script src="view_logs.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" class="back-to-home">← Back to Home</a>
+        <h1>View Logs - Student Management System</h1>
+    </header>
+    <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Log Number</th>
+                    <th>User Name</th>
+                    <th>Operation Time</th>
+                    <th>Table Name</th>
+                    <th>Operation</th>
+                    <th>Tuple Key Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Use Thymeleaf to loop through logs and populate the table -->
+                <tr th:each="log : ${logs}">
+                    <td th:text="${log['Log#']}"></td>
+                    <td th:text="${log['User Name']}"></td>
+                    <td th:text="${log['Operation Time']}"></td>
+                    <td th:text="${log['Table Name']}"></td>
+                    <td th:text="${log['Operation']}"></td>
+                    <td th:text="${log['Tuple Key Value']}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <div>
+            &copy; 2024 Student Management System. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
